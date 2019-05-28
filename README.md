@@ -15,7 +15,6 @@ Run your stack:
 
 ```
 docker-compose up -d
-
 ```
 
 Show me the logs:
