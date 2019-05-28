@@ -9,16 +9,8 @@ influxdb:
     - 'env.influxdb'
   volumes:
     # Data persistency
-    # sudo mkdir -p /srv/docker/influxdb/data
-    - /srv/docker/influxdb/data:/var/lib/influxdb
-
-telegraf:
-  image: telegraf:latest
-  container_name: telegraf
-  links:
-    - influxdb
-  volumes:
-    - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    # sudo mkdir -p /root/influxdb
+    - /root/influxdb:/var/lib/influxdb
 
 grafana:
   image: grafana/grafana:latest
@@ -31,5 +23,5 @@ grafana:
     - influxdb
   volumes:
     # Data persistency
-    # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
-    - /srv/docker/grafana/data:/var/lib/grafana
+    # sudo mkdir -p /root/grafana; chown 472:472 /srv/docker/grafana/data
+    - /root/grafana:/var/lib/grafana
