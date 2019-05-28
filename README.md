@@ -5,7 +5,7 @@
 Get the stack (only once):
 
 ```
-git clone https://github.com/nicolargo/docker-influxdb-grafana.git
+git clone https://github.com/matthewcroughan/docker-influxdb-grafana.git
 cd docker-influxdb-grafana
 docker pull grafana/grafana
 docker pull influxdb
