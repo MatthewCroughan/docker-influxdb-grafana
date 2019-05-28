@@ -8,9 +8,11 @@ influxdb:
   env_file:
     - 'env.influxdb'
   volumes:
-    # Data persistency
+    # Data persistence
     # sudo mkdir -p /root/influxdb
     - /root/influxdb:/var/lib/influxdb
+  restart_policy:
+    condition: unless-stopped 
 
 grafana:
   image: grafana/grafana:latest
@@ -22,6 +24,7 @@ grafana:
   links:
     - influxdb
   volumes:
-    # Data persistency
-    # sudo mkdir -p /root/grafana; chown 472:472 /srv/docker/grafana/data
+    # Data persistence
     - /root/grafana:/var/lib/grafana
+  restart_policy:
+    condition: unless-stopped
