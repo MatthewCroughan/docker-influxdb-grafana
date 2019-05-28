@@ -24,5 +24,6 @@ grafana:
     - influxdb
   volumes:
     # Data persistence
+    # sudo mkdir -p /root/grafana; chown 472:472 /root/grafana/
     - /root/grafana:/var/lib/grafana
   restart: unless-stopped
