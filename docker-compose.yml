@@ -11,8 +11,7 @@ influxdb:
     # Data persistence
     # sudo mkdir -p /root/influxdb
     - /root/influxdb:/var/lib/influxdb
-  restart:
-    condition: unless-stopped 
+  restart: unless-stopped 
 
 grafana:
   image: grafana/grafana:latest
@@ -26,5 +25,4 @@ grafana:
   volumes:
     # Data persistence
     - /root/grafana:/var/lib/grafana
-  restart:
-    condition: unless-stopped
+  restart: unless-stopped
