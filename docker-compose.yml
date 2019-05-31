@@ -12,9 +12,6 @@ influxdb:
     # sudo mkdir -p /root/influxdb
     - /root/influxdb:/var/lib/influxdb
   restart: unless-stopped 
-  networks:
-      influxdb_net:
-          ipv4_address:172.28.1.1
 
 grafana:
   image: grafana/grafana:latest
@@ -30,6 +27,3 @@ grafana:
     # sudo mkdir -p /root/grafana; chown 472:472 /root/grafana/
     - /root/grafana:/var/lib/grafana
   restart: unless-stopped
-  networks:
-      grafana_net:
-          ipv4_address:172.28.1.2
